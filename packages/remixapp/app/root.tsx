@@ -1,12 +1,17 @@
 import type { MetaFunction } from "@remix-run/node";
 import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
+    Links,
+    LiveReload,
+    Meta,
+    Outlet,
+    Scripts,
+    ScrollRestoration
 } from "@remix-run/react";
+import styles from 'ui/dist/main.css';
+
+export function links() {
+    return [{ rel: "stylesheet", href: styles }];
+}
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",

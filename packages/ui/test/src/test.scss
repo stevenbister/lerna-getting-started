@@ -1,0 +1,5 @@
+@use '../../src/styles/settings'  as *;
+
+.test {
+    color: $secondary-color;
+}
