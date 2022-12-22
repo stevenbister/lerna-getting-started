@@ -2,16 +2,20 @@
   "name": "root",
   "private": true,
   "scripts": {
-      "cache": "npx lerna add-caching",
-      "graph": "npx nx graph",
-      "build": "npx lerna run build",
-      "test": "npx lerna run test",
-      "dev:remix": "npx lerna run dev --scope=remixapp"
+    "cache": "npx lerna add-caching",
+    "graph": "npx nx graph",
+    "build": "npx lerna run build",
+    "test": "npx lerna run test",
+    "dev": "npx lerna run dev",
+    "dev:remix": "npx lerna run dev --scope=remixapp"
   },
   "devDependencies": {
-    "lerna": "^6.0.3"
+    "@types/node": "^18.11.17",
+    "lerna": "^6.0.3",
+    "typescript": "^4.9.4"
   },
   "workspaces": [
+    "apps/**",
     "packages/**"
   ]
 }
