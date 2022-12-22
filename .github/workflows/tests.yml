@@ -1,7 +1,9 @@
 name: Tests CI
 
 # Controls when the workflow will run
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
 
 permissions:
   actions: write
