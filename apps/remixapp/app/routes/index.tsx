@@ -21,7 +21,8 @@ export default function Index() {
             <Test />
             <TestTwo />
             <div>
-                Content!
+                <p>Content!</p>
+                <p>Makin' changes</p>
             </div>
             <Footer/>
         </>
