@@ -1,5 +1,7 @@
+import autoprefixer from 'autoprefixer';
 import fs from 'fs';
 import dts from 'rollup-plugin-dts';
+import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -24,6 +26,11 @@ export default [
                     fs.writeFileSync('./dist/main.css', styles)
                 },
                 outputStyle: 'compressed'
+            }),
+            postcss({
+                plugins: [
+                    autoprefixer
+                ]
             }),
             typescript(),
         ],

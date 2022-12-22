@@ -1,5 +1,6 @@
+import autoprefixer from 'autoprefixer';
 import fs from 'fs';
-import dts from 'rollup-plugin-dts';
+import postcss from 'rollup-plugin-postcss';
 import scss from 'rollup-plugin-scss';
 
 export default [
@@ -24,14 +25,12 @@ export default [
                 },
                 outputStyle: 'compressed'
             }),
+            postcss({
+                plugins: [
+                    autoprefixer
+                ]
+            })
         ],
         external: ["react"]
-    },
-    {
-        // path to your declaration files root
-        input: 'src/index.tsx',
-        output: [{ file: 'dist/index.d.ts', format: 'es' }],
-        external: [/\.scss$/, /\.css$/],
-        plugins: [dts()],
-    },
+    }
 ];
