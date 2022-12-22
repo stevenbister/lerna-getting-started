@@ -35,4 +35,4 @@ jobs:
           install-command: npm ci --ignore-scripts
 
       - name: 🧪 Test
-        run: npx nx affected --base=$([[ ${{ github.ref == 'refs/heads/main'}} ]] && echo "origin/main~1" || echo "origin/main") --head=HEAD --target=test --parallel=3
+        run: npx nx affected --base=origin/main --head=${{ github.head_ref || github.ref_name }} --target=test --parallel=3
