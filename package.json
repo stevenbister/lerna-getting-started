@@ -6,6 +6,7 @@
     "graph": "npx nx graph",
     "build": "npx lerna run build",
     "test": "npx lerna run test",
+    "dev": "npx lerna run dev",
     "dev:remix": "npx lerna run dev --scope=remixapp"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "typescript": "^4.9.4"
   },
   "workspaces": [
+    "apps/**",
     "packages/**"
   ]
 }
